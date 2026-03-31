@@ -22,7 +22,7 @@ jobs:
           export PATH="$(pwd)/depot_tools:$PATH"
           python scripts/bootstrap.py
           gclient sync
-          gn gen out/Release --args="is_debug=false target_cpu=\"x64\" angle_build_all=false is_component_build=false angle_enable_d3d9=false angle_enable_d3d11=false angle_enable_gl=false angle_enable_null=false angle_enable_vulkan=false angle_enable_metal=true angle_enable_essl=false angle_enable_glsl=true"
+          gn gen out/Release --args="is_debug=false target_cpu=\"x64\" angle_build_all=false is_component_build=false"
           autoninja -C out/Release
       - name: Pack build artifacts
         run: |
@@ -62,7 +62,7 @@ jobs:
           export PATH="$(pwd)/depot_tools:$PATH"
           python scripts/bootstrap.py
           gclient sync
-          gn gen out/Release --args="is_debug=false target_cpu=\"arm64\" angle_build_all=false is_component_build=false angle_enable_d3d9=false angle_enable_d3d11=false angle_enable_gl=false angle_enable_null=false angle_enable_vulkan=false angle_enable_metal=true angle_enable_essl=false angle_enable_glsl=true"
+          gn gen out/Release --args="is_debug=false target_cpu=\"arm64\" angle_build_all=false is_component_build=false"
           autoninja -C out/Release
       - name: Pack build artifacts
         run: |
