@@ -26,8 +26,8 @@ jobs:
           autoninja -C out/Release
       - name: Pack build artifacts
         run: |
-          mkdir angle-macos
-          mkdir angle-macos/dist
+          mkdir angle-macos-x64
+          mkdir angle-macos-x64/dist
           rm -rf out/Release/gen
           rm -rf out/Release/obj
           rm -rf out/Release/args.gn
@@ -35,15 +35,15 @@ jobs:
           rm -rf out/Release/build.ninja.d
           rm -rf out/Release/toolchain.ninja
           find out/Release -name "*.TOC" -delete
-          mv -f out/Release/* angle-macos/dist/
-          cp -rf include angle-macos/
-          find angle-macos -name ".clang-format" -delete
-          find angle-macos -name "*.md" -delete
+          mv -f out/Release/* angle-macos-x64/dist/
+          cp -rf include angle-macos-x64/
+          find angle-macos-x64 -name ".clang-format" -delete
+          find angle-macos-x64 -name "*.md" -delete
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: angle-macos-x64
-          path: angle-macos
+          path: angle-macos-x64
   build-macos-metal-arm64:
     runs-on: macos-latest
     steps:
@@ -66,8 +66,8 @@ jobs:
           autoninja -C out/Release
       - name: Pack build artifacts
         run: |
-          mkdir angle-macos
-          mkdir angle-macos/dist
+          mkdir angle-macos-arm64
+          mkdir angle-macos-arm64/dist
           rm -rf out/Release/gen
           rm -rf out/Release/obj
           rm -rf out/Release/args.gn
@@ -75,12 +75,12 @@ jobs:
           rm -rf out/Release/build.ninja.d
           rm -rf out/Release/toolchain.ninja
           find out/Release -name "*.TOC" -delete
-          mv -f out/Release/* angle-macos/dist/
-          cp -rf include angle-macos/
-          find angle-macos -name ".clang-format" -delete
-          find angle-macos -name "*.md" -delete
+          mv -f out/Release/* angle-macos-arm64/dist/
+          cp -rf include angle-macos-arm64/
+          find angle-macos-arm64 -name ".clang-format" -delete
+          find angle-macos-arm64 -name "*.md" -delete
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: angle-macos-arm64
-          path: angle-macos
+          path: angle-macos-arm64
