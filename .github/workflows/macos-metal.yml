@@ -45,9 +45,7 @@ jobs:
           name: angle-macos-metal
           path: angle-macos-metal
   build-macos-metal-arm64:
-    runs-on:
-      group: arm64-apple-darwin
-      labels: macos-latest
+    runs-on: macos-latest
     steps:
       - name: Delete unnecessary tools folder
         run: |
