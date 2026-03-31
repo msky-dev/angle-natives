@@ -13,7 +13,7 @@ jobs:
           sudo rm -rf /usr/local/share/mono
       - name: Checkout sources
         run: |
-          git clone -b chromium/6727 https://github.com/google/angle .
+          git clone -b chromium/7508 https://github.com/google/angle .
       - name: Fetch depot_tools
         run: |
           git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
@@ -55,7 +55,7 @@ jobs:
           sudo rm -rf /usr/local/share/mono
       - name: Checkout sources
         run: |
-          git clone -b chromium/6727 https://github.com/google/angle .
+          git clone -b chromium/7508 https://github.com/google/angle .
       - name: Fetch depot_tools
         run: |
           git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
