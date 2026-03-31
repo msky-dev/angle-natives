@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-macos-metal:
+  build-macos-x64:
     runs-on: macos-latest
     steps:
       - name: Delete unnecessary tools folder
@@ -44,7 +44,7 @@ jobs:
         with:
           name: angle-macos-x64
           path: angle-macos-x64
-  build-macos-metal-arm64:
+  build-macos-arm64:
     runs-on: macos-latest
     steps:
       - name: Delete unnecessary tools folder
